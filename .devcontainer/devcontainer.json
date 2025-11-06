@@ -1,5 +1,5 @@
 {
-  "name": "thesixonenine/dev/java:8-bookworm",
+  "name": "thesixonenine/dev/java:8-trixie",
   "build": {
     "dockerfile": "Dockerfile",
     "args": { "GITHUB_PAT": "${localEnv:GITHUB_PAT}" }

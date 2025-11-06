@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/java:8-bookworm
+FROM mcr.microsoft.com/devcontainers/java:8-trixie
 LABEL authors="Simple"
 ARG GITHUB_PAT
 ENV GITHUB_USERNAME=thesixonenine GITHUB_PAT=${GITHUB_PAT}
