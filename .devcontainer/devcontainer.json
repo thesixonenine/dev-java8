@@ -1,9 +1,10 @@
 {
-  "name": "thesixonenine/dev/java:8-trixie",
+  "name": "dev-java8",
   "build": {
     "dockerfile": "Dockerfile",
     "args": { "GITHUB_PAT": "${localEnv:GITHUB_PAT}" }
   },
+  "postStartCommand": "chezmoi update",
   "customizations": { "vscode": { "settings": {
         "extensions.allowed": {
             "microsoft": false,
