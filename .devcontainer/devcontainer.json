@@ -5,6 +5,16 @@
     "args": { "MY_PAT": "${localEnv:MY_PAT}" }
   },
   "postStartCommand": "chezmoi update",
+  "containerEnv": {
+    "HTTP_PROXY": "${localEnv:HTTP_PROXY}",
+    "HTTPS_PROXY": "${localEnv:HTTPS_PROXY}",
+    "ALL_PROXY": "${localEnv:ALL_PROXY}",
+    "NO_PROXY": "${localEnv:NO_PROXY}",
+    "http_proxy": "${localEnv:http_proxy}",
+    "https_proxy": "${localEnv:https_proxy}",
+    "all_proxy": "${localEnv:all_proxy}",
+    "no_proxy": "${localEnv:no_proxy}"
+  },
   "customizations": { "vscode": { "settings": {
         "extensions.allowed": {
             "microsoft": false,
