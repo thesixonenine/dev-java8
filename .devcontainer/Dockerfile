@@ -3,7 +3,6 @@ LABEL authors="Simple"
 ARG USERNAME=thesixonenine
 ARG MY_PAT
 ENV MY_PAT=${MY_PAT}
-ENV HTTP_PROXY=http://host.docker.internal:1080 HTTPS_PROXY=http://host.docker.internal:1080
 ENV TZ=Asia/Shanghai DEBIAN_FRONTEND=noninteractive
 
 RUN sed -i -e 's@deb.debian.org@mirrors.aliyun.com@;s@http:@https:@' /etc/apt/sources.list.d/debian.sources && \
@@ -12,5 +11,4 @@ RUN sed -i -e 's@deb.debian.org@mirrors.aliyun.com@;s@http:@https:@' /etc/apt/so
     sh -c "$(curl -fsLS get.chezmoi.io)" && \
     chsh -s /usr/bin/zsh vscode
 USER vscode
-RUN git config --global http.https://github.com.proxy $HTTP_PROXY && \
-    chezmoi init https://$USERNAME:$MY_PAT@github.com/$USERNAME/dotfiles.git
+RUN chezmoi init https://$USERNAME:$MY_PAT@github.com/$USERNAME/dotfiles.git
